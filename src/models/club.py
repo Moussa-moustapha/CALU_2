@@ -13,7 +13,11 @@ class Club(BaseModel, Base):
     name = Column(String(128), nullable=True, unique=True)
     owner_id = Column(String(128), ForeignKey('users.id'), nullable=True)
     events = relationship('Event', backref='clubs')
-    
+    # members = relationship('User', backref='clubs')
+    discripton = Column(String(128), nullable=True)
+    member_count = Column(Integer, nullable=True)
+    attraction_count = Column(Integer, nullable=True)
+
 
     def __init__(self, *args, **kwargs):
         """Initializes User object with super class constructor"""

@@ -27,22 +27,18 @@ class User(BaseModel, Base, UserMixin):
     __tablename__ = "users"
 
     # Requierd attributes for users in order to register as a user
-    # to the ketero App.
+    # to the CALU App.
     username = Column(String(128), nullable=True, unique=True)
     first_name = Column(String(128), nullable=True)
     last_name = Column(String(128), nullable=True)
     email = Column(String(128), nullable=False, unique=True)
     password = Column(String(128), nullable=False)
     phone = Column(String(10), nullable=True, unique=True)
-
-    # Optional attributes, users must fillout these infromatin in order
-    # to order cards from hospitals.
     place_of_birth = Column(String(128), nullable=True)
-    sex = Column(String(10), nullable=True)
-    age = Column(Integer, nullable=True)
-    country = Column(String(128), nullable=True)
-    state = Column(String(128), nullable=True)
-    city = Column(String(128), nullable=True)
+    gender = Column(String(10), nullable=True)
+    nationality = Column(String(128), nullable=True)
+    major = Column(String(128), nullable=True)
+    study_location = Column(String(128), nullable=True)
 
     clubs = relationship('Club', backref='users')
 
