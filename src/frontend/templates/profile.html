@@ -18,6 +18,12 @@
     <link rel="icon" href="../static/img/blue-icon-small.ico">
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
     <title>Calu After Login Home Page</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+
 </head>
 
 <body class="font-[poppins] bg-gradient-to-t from-[#ffffff] to-[#ffffff] h-screen">
@@ -29,7 +35,7 @@
 
             <!-- Logo -->
             <div>
-                <a href="home1.html" class=" flex items-center">
+                <a href="home-1.html" class=" flex items-center">
                     <img src="../static/img/blue-icon-small.ico" alt="Calu Logo" class="w-16">
                     <span class="self-center text-3xl font-black whitespace-nowrap text-sky-600">CALU</span>
                 </a>
@@ -41,13 +47,13 @@
                 class="nav-links z-10 duration-500 md:static absolute bg-white md:min-h-fit min-h-[60vh] left-0 top-[-100%] md:w-auto  w-full flex items-center px-5">
                 <ul class="flex md:flex-row flex-col md:items-center md:gap-[4vw] gap-8">
                     <li>
-                        <a href="home1.html" class="text-xl font-bold text-[#3c5a66] hover:text-sky-400">Home</a>
+                        <a href="home-1.html" class="text-xl font-bold text-[#3c5a66] hover:text-sky-400">Home</a>
                     </li>
                     <li>
-                        <a href="clubs.html" class="text-xl font-bold text-[#507888] hover:text-sky-400">Clubs</a>
+                        <a href="clubs-1.html" class="text-xl font-bold text-[#507888] hover:text-sky-400">Clubs</a>
                     </li>
                     <li>
-                        <a href="about.html" class="text-xl font-bold text-[#507888] hover:text-sky-400">About</a>
+                        <a href="about-1.html" class="text-xl font-bold text-[#507888] hover:text-sky-400">About</a>
                     </li>
                 </ul>
             </div>
@@ -87,7 +93,8 @@
 
                             <div class="border-t border-slate-500/30"></div>
                             <div class="flex flex-col">
-                                <a href="#" class="flex items-center gap-3 rounded-md py-2 px-3 hover:bg-slate-800">
+                                <a href="./profile.html"
+                                    class="flex items-center gap-3 rounded-md py-2 px-3 hover:bg-slate-800">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
                                         class="h-5 w-5">
                                         <path fill-rule="evenodd"
@@ -141,6 +148,8 @@
 
 
 
+
+
     <main>
 
 
@@ -151,34 +160,52 @@
             <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
 
 
-                <div class="w-full p-4 flex justify-center pb-16">
+                <div class="w-full p-4 flex justify-center pb-12">
                     <h2 class="text-sky-700 xl:text-3xl font-bold md:text-2xl sm:text-xl">Chernet's Profile</h2>
                 </div>
 
 
 
-                <div class="flex flex-col md:flex-row justify-between mb-4">
-                    <div class="profile-picture mb-4 md:mb-0">
+                <div class="flex flex-col md:flex-row justify-even mb-4">
+                    <div class="profile-picture mb-8 md:mb-0 xl:pr-32 md:pr-16 sm:pr-16">
                         <img src="../static/img/IMG_1035.jpeg" alt="Profile Picture"
-                            class="rounded-full w-[25vh] h-[25vh] mx-auto md:mx-0">
-                        <div class="image-options mt-2 flex justify-around">
-                            <button class="btn-delete py-2 px-4 rounded bg-red-500 text-white"
-                                type="button">Delete</button>
-                            <button class="btn-change py-2 px-4 rounded bg-blue-500 text-white"
-                                type="button">Change</button>
-                        </div>
+                            class="rounded-full w-[25vh] h-[25vh] mx-auto md:mx-0 mb-4 border-4 border-gray-500">
+                        <button class="btn-delete py-1 px-2 mr-2 rounded bg-red-500 text-white border-2 border-gray-400"
+                            type="button">
+                            <i class="fas fa-trash-alt"></i> Delete
+                        </button>
+
+                        <button class="btn-change py-1 px-2 rounded bg-blue-500 text-white border-2 border-gray-400"
+                            type="button">
+                            <i class="fas fa-recycle"></i> Change
+                        </button>
                     </div>
-                    <div class="data-list">
+
+
+
+                    <div class="data-list flex-col w-auto">
                         <!-- Existing inputs... -->
 
                         <div class="mb-4">
                             <label class="block text-gray-700 text-sm font-bold mb-2" for="occupation">
-                                Full Name
+                                First Name
                             </label>
                             <input
                                 class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                                id="name" type="text" placeholder="Chernet Asmamaw">
+                                id="firstname" type="text" placeholder="Chernet">
                         </div>
+
+
+
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="occupation">
+                                Last Name
+                            </label>
+                            <input
+                                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                id="last name" type="text" placeholder="Asmamw">
+                        </div>
+
 
 
                         <div class="mb-4">
@@ -194,18 +221,6 @@
 
                         <div class="mb-4">
                             <label class="block text-gray-700 text-sm font-bold mb-2" for="occupation">
-                                Password
-                            </label>
-                            <input
-                                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                                id="password" type="text" placeholder="***********">
-                        </div>
-
-
-
-
-                        <div class="mb-4">
-                            <label class="block text-gray-700 text-sm font-bold mb-2" for="occupation">
                                 Email
                             </label>
                             <input
@@ -214,36 +229,81 @@
                         </div>
 
 
+
+
+
                         <div class="mb-4">
-                            <label class="block text-gray-700 text-sm font-bold mb-2" for="occupation">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
+                                Password
+                            </label>
+                            <input
+                                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                id="password" type="password" placeholder="***********">
+                        </div>
+
+
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="dob">
+                                Date of Birth
+                            </label>
+                            <input
+                                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                id="dob" type="date">
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="phone">
+                                Phone Number
+                            </label>
+                            <input
+                                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                id="phone" type="text" placeholder="Phone Number">
+                        </div>
+
+
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="major">
                                 Major
                             </label>
-                            <input
+                            <select
                                 class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                                id="major" type="text" placeholder="BSE M2022">
+                                id="gender">
+                                <option value="bel">BEL</option>
+                                <option value="bse">BSE</option>
+                                <option value="other">Other</option>
+                            </select>
                         </div>
 
 
 
                         <div class="mb-4">
-                            <label class="block text-gray-700 text-sm font-bold mb-2" for="address">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="gender">
                                 Gender
                             </label>
-                            <input
+                            <select
                                 class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                                id="gender" type="text" placeholder="Male">
+                                id="gender">
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
                         </div>
 
 
 
-
                         <div class="mb-4">
-                            <label class="block text-gray-700 text-sm font-bold mb-2" for="address">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="adress">
                                 Study Location
                             </label>
-                            <input
+                            <select
                                 class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                                id="address" type="text" placeholder="Addis Ababa Hub">
+                                id="gender">
+                                <option value="alu">ALU Campus</option>
+                                <option value="kigali">Kigali Hub</option>
+                                <option value="addis">Addis Ababa Hub</option>
+                                <option value="nairobi">Nairobi Hub</option>
+                                <option value="lagos">Lagos Hub</option>
+                                <option value="other">Other</option>
+                            </select>
                         </div>
 
 
@@ -358,6 +418,7 @@
     <script src="../static/js/user_profile.js"></script>
     <script src="../static/js/profile_dropdown.js"></script>
     <script src="../static/js/humberger_menu.js"></script>
+    <script src="../static/js/profile_alidation.js"></script>
 
 
 
