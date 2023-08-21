@@ -19,7 +19,7 @@
       <div class="wrapper">
         <div class="form-box login">
           <h2>Login</h2>
-          <form action="index.html">
+          <form action="" method="POST">
             <div class="input-box">
               <span class="icon"><ion-icon name="mail"></ion-icon></span>
               <input autocomplete="off" autofocus type="email" id="email1" required>
@@ -43,7 +43,7 @@
 
         <div class="form-box register">
           <h2>Registration</h2>
-          <form action="#" onsubmit="register()">
+          <form action="" method="POST">
             <div class="input-box">
               <span class="icon"><ion-icon name="mail"></ion-icon></span>
               <input autocomplete="off" autofocus type="email" id="email" required>
@@ -76,29 +76,6 @@
     </div>
 
 
-
-
-    <script>
-      function register(event) {
-        event.preventDefault();
-
-        const emailInput = document.getElementById('email');
-        const passwordInput = document.getElementById('password');
-        const confirmPasswordInput = document.getElementById('confirm-password');
-
-        const email = emailInput.value;
-        const password = passwordInput.value;
-        const confirmPassword = confirmPasswordInput.value;
-
-        if (password !== confirmPassword) {
-          alert("Passwords do not match. Please try again.");
-          return;
-        }
-
-        // Perform registration logic here
-        // ...
-      }
-    </script>
 
 
     <script src="../static/js/signup.js"></script>
