@@ -59,22 +59,7 @@ def signup():
 
 
 
-
-
-
-
-
-
-
-
-
-
-auth = Blueprint("auth", __name__)
-
-cache_id = str(uuid4())
-
-
-@auth.route('/sign-in', methods=['GET', 'POST'], strict_slashes=False)
+@app.route('/sign-in', methods=['GET', 'POST'], strict_slashes=False)
 def login():
     if request.method == "POST":
         data = request.form
@@ -90,22 +75,22 @@ def login():
             if password == user.password:
                 flash("Logged in successfully", category='success')
                 login_user(user, remember=True)
-                return redirect(url_for('views.home'))
+                return redirect(url_for('home1'))
             else:
                 flash("Incorrect Password", category='error')
         else:
             flash("Incorrect username", category='error')
-    return render_template("login.html", cache_id=cache_id, user=current_user)
+    return render_template("signup.html", cache_id=cache_id, user=current_user)
 
 
-@auth.route('/logout', strict_slashes=False)
+@app.route('/logout', strict_slashes=False)
 @login_required
 def logut():
     logout_user()
-    return redirect(url_for('auth.login'))
+    return redirect(url_for('home'))
 
 
-@auth.route('/sign-up', methods=['GET', 'POST'], strict_slashes=False)
+@app.route('/sign-up', methods=['GET', 'POST'], strict_slashes=False)
 def register():
     if request.method == 'POST':
         users = storage.all(User).values()
@@ -142,15 +127,9 @@ def register():
             new_account.save()
             login_user(new_account, remember=True)
             flash("Account created successfully", category='success')
-            return redirect(url_for('views.home'))
+            return redirect(url_for('home1'))
 
     return render_template("signup.html", cache_id=cache_id, user=current_user)
-
-
-
-
-
-
 
 
 
